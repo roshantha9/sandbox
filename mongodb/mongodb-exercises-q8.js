@@ -1,0 +1,1 @@
+db.restaurants.find({grades : { $elemMatch:{"score":{$gt : 60}}}}, {"address.building":1});

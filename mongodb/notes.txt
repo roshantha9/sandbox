@@ -1,0 +1,31 @@
+# notes on setup
+install 	: https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu-16.04/
+security 	: https://askubuntu.com/questions/885906/mongodb-authorization-on-ubuntu-16-04
+
+
+# Restart mongodb service:
+
+sudo service mongod restart
+
+# Check server status:
+
+service mongod status
+
+# Run mongo with authentication:
+
+mongo localhost:27017/admin -u rosh -p mongo123
+
+
+# Shutdown the server and exit
+
+db.shutdownServer();
+exit
+
+
+
+
+#############
+
+
+# loading json file to DB:
+mongoimport -u rosh -p mongo123 --host localhost --port 27017 --authenticationDatabase admin --db dbrestaurants --collection restaurants --drop --file restaurants.json 
